@@ -1,14 +1,11 @@
 # How to build and use the Moralpain development container
-This directory supports building of a docker image to support 
-development of the moralpain_dev project. Do not open this repo
-in a remote container. Open it on your local machine, on which
-you'll build the image to post to a registry. 
+Ignore this stuff.
 
 ## To use this image
 
 In devcontainer.json: 
 ```python    
-"image": "ghcr.io/<github-username>/moralpain_container:latest",
+"image": "ghcr.io/<github-username>/mathpub_container:latest",
 ```
 
 ## Build image from Dockerfile
@@ -19,7 +16,7 @@ repository image name is <github-username>/moralpain.
 It will have the tag, *latest*.
 
 ``` sh
-docker build -t ghcr.io/<github-username>/moralpain_container:latest . -m 8g
+docker build -t ghcr.io/<github-username>/mathpub_container:latest . -m 8g
 ```
 
 ## Push image to DockerHub
@@ -29,7 +26,7 @@ use docker push. Log in first if necessary.
 
 ``` sh
 echo <GitHub PAT> | docker login ghcr.io -u myusername --password-stdin
-docker push ghcr.io/<github-username>/moralpain_container:latest
+docker push ghcr.io/<github-username>/<projectname>_container:latest
 ```
 
 ## Pull image from DockerHub

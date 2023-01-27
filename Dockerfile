@@ -27,12 +27,7 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-# Default python3 is python3.6; use python3.8 to get it
-
-RUN python3 -m pip install --no-cache-dir \
+# Sphinx and Z3
+RUN python3.8 -m pip install --no-cache-dir \
   Sphinx==5.3.0 Pillow==6.2.2 sphinx-rtd-theme \
-  regex myst-parser
-
-RUN python3.8 -m pip install regex
-
-# CMD ["make", "latexpdf"]
+  regex myst-parser regexz3-solver
